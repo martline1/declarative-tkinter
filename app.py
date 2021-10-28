@@ -8,15 +8,21 @@ class App:
     def build(self):
         MainWindow(
             title="Tkinter App!",
-            dimensions=(300,200),
+            dimensions=(600, 600),
             children=[
-                Button(
-                    text="Click me!",
-                    onClick= lambda: print("Hello world!")
-                ),
-                Button(
-                    text="Click me!",
-                    onClick= lambda: print("Hello world!")
+                Stack(
+                    children= [
+                        Button(
+                            text="Click me!",
+                            onClick= lambda: print("Hello world!")
+                        ),
+                        Positioned(
+                            child= Button(
+                                text="Positioned Button!",
+                                onClick= lambda: print("Click on positioned button"),
+                            ),
+                        ),
+                    ],
                 ),
             ],
         )
